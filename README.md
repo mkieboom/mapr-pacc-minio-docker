@@ -51,12 +51,15 @@ docker run -d \
 -p 9000:9000 \
 mkieboom/mapr-pacc-minio-docker
 ```
-When running as a deamon, use the following command to get the accesskey and
+When running as a deamon, use the following command to get the accesskey and secretkey
 ```
 docker logs minio | grep 'mc config host'
 ```
 
-#### Run the Minio PACC container as a deamon
+#### Connect to the Minio UI
+```
+Open your browser and point to http://localhost:9200
+```
 
 
 
