@@ -21,4 +21,4 @@ RUN wget https://dl.minio.io/server/minio/release/linux-amd64/minio && \
 EXPOSE 9000
 
 # Launch Minio server in the provided folder path
-CMD /minio server $MINIO_PATH
+CMD sudo /minio server $MINIO_PATH
