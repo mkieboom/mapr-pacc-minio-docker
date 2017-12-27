@@ -58,10 +58,12 @@ docker logs minio | grep 'mc config host'
 
 #### Connect to the Minio UI
 ```
-Open your browser and point to http://localhost:9000
+Open your browser and point to http://localhost:9200
 ```
 
-
-
-
-
+#### Launch with specific accesskey and secretkey
+When re-launching the docker container it will regenerate the accesskey and secretkey. To avoid this (for development and testing purposes for example) it is possible to specify the accesskey and secretkey via the docker run command line or in the Dockerfile. Please note: providing this info via de docker run command is not secure as the accesskey and secretkey will show up in the linux ps command hence not recommended for production use.
+```
+-e MINIO_ACCESS_KEY=myminioaccesskey \
+-e MINIO_SECRET_KEY=myminiosecretkey \
+```
