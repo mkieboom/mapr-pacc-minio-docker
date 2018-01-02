@@ -58,7 +58,7 @@ docker logs minio | grep 'mc config host'
 
 #### Connect to the Minio UI
 ```
-Open your browser and point to http://localhost:9200
+Open your browser and point to http://localhost:9000
 ```
 
 #### Launch with specific accesskey and secretkey
