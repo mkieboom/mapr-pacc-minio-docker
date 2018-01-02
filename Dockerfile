@@ -17,8 +17,13 @@ ENV MINIO_PATH /mapr/demo.mapr.com/minio
 RUN wget https://dl.minio.io/server/minio/release/linux-amd64/minio && \
     chmod +x minio
 
+# Add the launch script which checks if the /mapr mountpoint is available in the container
+ADD launch.sh /launch.sh
+RUN sudo chmod +x /launch.sh
+
 # Expose the Minio server port
 EXPOSE 9000
 
 # Launch Minio server in the provided folder path
-CMD sudo -E /minio server $MINIO_PATH
+#CMD sudo -E /minio server $MINIO_PATH
+CMD /launch.sh
